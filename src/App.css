@@ -43,6 +43,9 @@
   
 }
 
+
+/* THEME SWITCHING CODE */
+
 :root {
   /* Light mode */
   --light-switch-shadow: #373d4e;
@@ -82,32 +85,24 @@
 /* Theme switcher */
 .theme-switch { /* Hides the checkbox */
   position: absolute !important;
-  height: 1px;
-  width: 1px;
+  height: 10px;
+  width: 10px;
   overflow: hidden;
   clip: rect(1px, 1px, 1px, 1px);
+  margin-left: 50%;
 }
 
 .switch-label {
+  background: var(--text-color);
+  border: 3px solid var(--text-color);
+  border-radius: 1.25px;
+  color: var(--bg-color);
   cursor: pointer;
-  display: flex;
-}
-
-.switch-label::before {
-  content: var(--switch-icon);
-  font-size: 40px;
-  transition: text-shadow .2s;
-}
-
-.switch-label::after {
-  align-self: center;
-  content: var(--switch-text);
-  color: var(--switch-shadow-color);
-  font-size: 28px;
-  line-height: 40px;
-  opacity: 0;
-  padding-left: 15px;
-  transition: opacity .2s;
+  display: inline-block;
+  /* font-size: 125%; */
+  /* margin: 20px 0 20px 20px; */
+  padding: 2px 12px;
+  transition: box-shadow .2s, border .2s;
 }
 
 .theme-switch:focus ~ #page .switch-label::before,

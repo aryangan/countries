@@ -70,6 +70,30 @@ function App() {
     height: "35px"
   };
 
+  const dropdownStyle = {
+    multiselectContainer: {
+      width: "35%",
+      margin: "auto"
+    },
+
+    optionContainer: { // To change css for option container 
+      backgroundColor: "light-gray",
+      color: "navy"
+    },
+
+    inputField: {
+      textAlign: "center",
+      color: "navy"
+    },
+
+    searchBox: {
+      backgroundColor: "light-gray",
+      color: "navy",
+      textAlign: "center",
+      margin: "auto"
+    }
+  }
+
   const updateInput = async (input) => {
     setInput(input);
     const response = await axios.get(apiURL);
@@ -102,11 +126,12 @@ function App() {
     })
     setCountries(filtered);
   }
-  
+
   return (
     <div className="App">
 
-      <Multiselect options={options} onSelect={updateFilter} onRemove={updateFilter} displayValue="name" />
+      <Multiselect options={options} onSelect={updateFilter} onRemove={updateFilter} style={dropdownStyle} displayValue="name" 
+      placeholder="Filter by region..." />
 
       <Search
         keyword={input}
@@ -126,7 +151,7 @@ function App() {
                 const flag = country.flag;
                 const region = country.region;
                 const languages = intersperse(country.languages, ", ", "name");
-                const capital = country.capital === "" ? "None" : country.capital;                
+                const capital = country.capital === "" ? "None" : country.capital;
                 const currency = intersperse(country.currencies, ", ", "name");
                 const code = country.alpha3Code;
                 const regionalBloc = intersperse(country.regionalBlocs, ", ", "name");                

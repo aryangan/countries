@@ -18,6 +18,10 @@ To filter by region, the multi-select dropdown can be used. Multiple regions can
 
 Finally, each country can be clicked on to see a modal pop up with additional information about that country. This pop up will display languages, capital city, currency, country code, and regional bloc. If a country does not have one of these, it will display "None". For example, Antartica does not have a capital city, and hence that part of the additional info will display as "None" when the country is clicked on.
 
+# Theme Switching
+
+In order to switch between light and dark mode, the user must click the 'Switch Theme' button in the upper left hand corner of the screen. This way, they will be able to see the change in real time. 
+
 # Running Application
 
 To run this application, in the project directory, you can run:
